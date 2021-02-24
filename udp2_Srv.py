@@ -16,7 +16,7 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
         global cnt
         cnt += 1
         s = (str(data.upper())+" {}").format( cnt)
-        print ( s)
+        print (s)
         socket.sendto( s.encode('utf-8')  , self.client_address)
 
 class ThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServer):
